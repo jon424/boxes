@@ -82,6 +82,14 @@
       #static-divs > .static:nth-child(5) {
         border-color: blue;
       }
+
+      /* position: relative example */
+      .relative {
+          position: relative;
+          left: 30px;
+          border: 3px solid #73AD21;
+      }
+
     </style>
   </head>
   <body>
@@ -91,7 +99,7 @@
         <p>
           An element with <b>position: static;</b> is not positioned in any
           special way; it is always positioned according to the normal flow of
-          the page:
+          the page. <i>Static positioned elements are not affected by the top, bottom, left, and right properties:</i>
         </p>
         <div class="static">This div element has position: static;</div>
       </div>
@@ -159,6 +167,34 @@
           </pre>
       </details>
     </div>
+    <h2>position: relative;</h2>
+    <div class="content-card">
+        <div class="example-content">
+          <p>
+            An element with <b>position: relative;</b> is positioned relative to its normal position. Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element. Let's move this green rectangle over 30 pixels by setting the <code>left</code> property to <code>30px</code>.
+          </p>
+          <div class="relative">This div element has position: relative;</div>
+        </div>
+        <details>
+          <summary markdown="span">HTML</summary>
+          <pre>
+              <code class="code">
+                  &lt;div class="relative">This div element has position: relative;&lt;/div&gt;
+              </code>
+            </pre>
+        </details>
+        <details>
+          <summary markdown="span">CSS</summary>
+          <pre>
+              <code class="code">
+            .relative {
+               position: relative;
+               left: 30px;
+               border: 3px solid #73AD21;
+            }
+              </code>
+            </pre>
+        </details>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css"
