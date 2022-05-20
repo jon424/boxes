@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css" />
+    <style type="text/css">
+      :root {
+        --main-bg-color: #838060;
+        --border-color: #cab577;
+        --card-bg-color: #dbceb0;
+        --content-bg-color: white;
+        --content-border-color: #838060;
+        --primary-font-color: #555;
+        --heading-color: #000;
+      }
+      /* #dbceb0 #cab577 #838060 #7e4a35  */
+
+      body {
+        color: var(--primary-font-color);
+        background-color: var(--main-bg-color);
+        font-family: "Helvetica", "Arial", sans-serif;
+        line-height: 1.5;
+        padding: 4em 1em;
+        margin: 0 auto;
+        max-width: 50em;
+      }
+
+      h1,
+      h2,
+      strong {
+        color: var(--heading-color);
+      }
+
+      h2 {
+        margin-top: 1em;
+        padding-top: 1em;
+      }
+
+      a {
+        color: #e81c4f;
+      }
+      pre {
+        margin: none;
+        white-space: pre-line;
+      }
+
+      .content-card {
+        color: var(--primary-font-color);
+        border: 3px solid var(--border-color);
+        background-color: var(--card-bg-color);
+      }
+
+      .example-content {
+        background-color: var(--content-bg-color);
+        padding: 1em;
+        border: 1px solid #838060;
+      }
+
+      /* position: static example */
+      div.static {
+        position: static;
+        border: 3px solid #73ad21;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>position: static;</h2>
+    <div class="content-card">
+      <div class="example-content">
+        <p>
+          An element with <b>position: static;</b> is not positioned in any
+          special way; it is always positioned according to the normal flow of
+          the page:
+        </p>
+        <div class="static">This div element has position: static;</div>
+      </div>
+      <details>
+        <summary markdown="span">HTML</summary>
+        <pre>
+            <code class="code">
+                &lt;div class="static">
+                This div element has position: static;
+                &lt;/div&gt;
+            </code>
+          </pre>
+      </details>
+      <!-- <br /> -->
+      <details>
+        <summary markdown="span">CSS</summary>
+        <pre>
+            <code class="code">
+                div.static {
+                    position: static;
+                    border: 3px solid #73AD21;
+                  }
+            </code>
+          </pre>
+      </details>
+    </div>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
