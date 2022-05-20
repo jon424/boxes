@@ -15,6 +15,7 @@
         --content-border-color: #838060;
         --primary-font-color: #555;
         --heading-color: #000;
+        --accent-color-rust: #7e4a35;
       }
       /* #dbceb0 #cab577 #838060 #7e4a35  */
 
@@ -85,11 +86,26 @@
 
       /* position: relative example */
       .relative {
-          position: relative;
-          left: 30px;
-          border: 3px solid #73AD21;
+        position: relative;
+        left: 30px;
+        border: 3px solid #73ad21;
       }
 
+      /* position: fixed example */
+      .fixed {
+        background: var(--accent-color-rust);
+        border: 3px solid var(--border-color);
+        bottom: 0;
+        color: white;
+        padding: 15px;
+        position: fixed;
+        right: 0;
+        visibility: hidden;
+        width: 300px;
+      }
+      .hide {
+        visibility: unset;
+      }
     </style>
   </head>
   <body>
@@ -99,7 +115,11 @@
         <p>
           An element with <b>position: static;</b> is not positioned in any
           special way; it is always positioned according to the normal flow of
-          the page. <i>Static positioned elements are not affected by the top, bottom, left, and right properties:</i>
+          the page.
+          <i
+            >Static positioned elements are not affected by the top, bottom,
+            left, and right properties:</i
+          >
         </p>
         <div class="static">This div element has position: static;</div>
       </div>
@@ -169,23 +189,29 @@
     </div>
     <h2>position: relative;</h2>
     <div class="content-card">
-        <div class="example-content">
-          <p>
-            An element with <b>position: relative;</b> is positioned relative to its normal position. Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element. Let's move this green rectangle over 30 pixels by setting the <code>left</code> property to <code>30px</code>.
-          </p>
-          <div class="relative">This div element has position: relative;</div>
-        </div>
-        <details>
-          <summary markdown="span">HTML</summary>
-          <pre>
+      <div class="example-content">
+        <p>
+          An element with <b>position: relative;</b> is positioned relative to
+          its normal position. Setting the top, right, bottom, and left
+          properties of a relatively-positioned element will cause it to be
+          adjusted away from its normal position. Other content will not be
+          adjusted to fit into any gap left by the element. Let's move this
+          green rectangle over 30 pixels by setting the
+          <code>left</code> property to <code>30px</code>.
+        </p>
+        <div class="relative">This div element has position: relative;</div>
+      </div>
+      <details>
+        <summary markdown="span">HTML</summary>
+        <pre>
               <code class="code">
                   &lt;div class="relative">This div element has position: relative;&lt;/div&gt;
               </code>
             </pre>
-        </details>
-        <details>
-          <summary markdown="span">CSS</summary>
-          <pre>
+      </details>
+      <details>
+        <summary markdown="span">CSS</summary>
+        <pre>
               <code class="code">
             .relative {
                position: relative;
@@ -194,7 +220,75 @@
             }
               </code>
             </pre>
-        </details>
+      </details>
+    </div>
+
+    <h2>position: fixed;</h2>
+    <div class="content-card">
+      <div class="example-content">
+        <p>
+          An element with <b>position: fixed;</b> is positioned relative to the
+          viewport, which means it always stays in the same place even if the
+          page is scrolled. The top, right, bottom, and left properties are used
+          to position the element. A fixed element does not leave a gap in the
+          page where it would normally have been located.
+        </p>
+        <p>
+          Show/Hide Fixed Element In Lower Right Hand Corner of Viewport:
+          <span><button class="btn">Show/Hide</button></span>
+        </p>
+        <div id="fixed-div" class="fixed">
+          This div element has position: fixed;
+        </div>
+      </div>
+      <details>
+        <summary markdown="span">HTML</summary>
+        <pre>
+                <code class="code">
+                    &lt;div class="fixed">This div element has position: fixed;&lt;/div&gt;
+                </code>
+              </pre>
+      </details>
+      <details>
+        <summary markdown="span">CSS</summary>
+        <pre>
+                <code class="code">
+                    .fixed {
+                        background: var(--accent-color-rust);
+                        border: 3px solid var(--border-color);
+                        bottom: 0;
+                        color: white;
+                        padding: 15px;
+                        position: fixed;
+                        right: 0;
+                        visibility: hidden;
+                        width: 300px;
+                      }
+
+                      .hide {
+                        visibility: unset;
+                      }
+                </code>
+              </pre>
+      </details>
+      <details>
+        <summary markdown="span">
+          JavaScript <i>for the click handler :-)</i>
+        </summary>
+        <pre>
+                <code class="code">
+                    const clickHandler = () => {
+                        const element = document.getElementById("fixed-div");
+                        element.classList.toggle("hide");
+                      };
+
+                      const btn = document.querySelector(".btn");
+                      btn.addEventListener("click", clickHandler);
+                </code>
+              </pre>
+      </details>
+    </div>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css"
@@ -204,5 +298,13 @@
       hljs.initHighlightingOnLoad();
     </script>
     <script src="index.js"></script>
+    <script>
+      const clickHandler = () => {
+        const element = document.getElementById("fixed-div");
+        element.classList.toggle("hide");
+      };
+      const btn = document.querySelector(".btn");
+      btn.addEventListener("click", clickHandler);
+    </script>
   </body>
 </html>
