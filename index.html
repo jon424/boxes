@@ -106,6 +106,23 @@
       .hide {
         visibility: unset;
       }
+
+      .relative-div {
+        margin: auto;
+        position: relative;
+        width: 400px;
+        height: 200px;
+        border: 3px solid #73ad21;
+      }
+
+      .absolute-div {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 200px;
+        height: 100px;
+        border: 3px solid #73ad21;
+      }
     </style>
   </head>
   <body>
@@ -286,6 +303,62 @@
 
                       const btn = document.querySelector(".btn");
                       btn.addEventListener("click", clickHandler);
+                </code>
+              </pre>
+      </details>
+    </div>
+    <h2>position: absolute;</h2>
+    <div class="content-card">
+      <div class="example-content">
+        <p>
+          An element with <b>position: absolute;</b> is positioned relative to
+          the nearest positioned ancestor (instead of positioned relative to the
+          viewport, like fixed). However; if an absolute positioned element has
+          no positioned ancestors, it uses the document body, and moves along
+          with page scrolling.<br />
+          Note: Absolute positioned elements are removed from the normal flow,
+          and can overlap elements:
+        </p>
+        <div class="relative-div">
+          This div element has position: relative;
+          <div class="absolute-div">
+            This div element has position: absolute;
+          </div>
+        </div>
+      </div>
+      <details>
+        <summary markdown="span">HTML</summary>
+        <pre>
+                <code class="code">
+                    &lt;div class="relative-div"&gt;
+                        This div element has position: relative;
+                        &lt;div class="absolute-div"&gt;
+                          This div element has position: absolute;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                </code>
+              </pre>
+      </details>
+      <details>
+        <summary markdown="span">CSS</summary>
+        <pre>
+                <code class="code">
+                    .relative-div {
+                        margin: auto;
+                        position: relative;
+                        width: 400px;
+                        height: 200px;
+                        border: 3px solid #73ad21;
+                      }
+                
+                      .absolute-div {
+                        position: absolute;
+                        top: 80px;
+                        right: 0;
+                        width: 200px;
+                        height: 100px;
+                        border: 3px solid #73ad21;
+                      }
                 </code>
               </pre>
       </details>
