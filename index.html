@@ -23,20 +23,17 @@
         color: var(--primary-font-color);
         background-color: var(--main-bg-color);
         font-family: "Helvetica", "Arial", sans-serif;
-        line-height: 1.5;
         padding: 4em 1em;
         margin: 0 auto;
         max-width: 50em;
+        font-size: 18px;
+        line-height: 24px;
       }
 
       h1,
-      h2,
-      strong {
-        color: var(--heading-color);
-      }
-
       h2 {
-        margin-top: 1em;
+        color: var(--heading-color);
+        margin: 1em auto;
         padding-top: 1em;
       }
 
@@ -49,9 +46,14 @@
       }
 
       .content-card {
+        box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%),
+          0 6px 20px 0 rgb(0 0 0 / 19%);
         color: var(--primary-font-color);
         border: 3px solid var(--border-color);
         background-color: var(--card-bg-color);
+        margin: auto;
+        margin-bottom: 40px;
+        max-width: 600px;
         padding: 1em;
       }
 
@@ -255,6 +257,13 @@
         <p>
           Show/Hide fixed element in lower right corner of viewport:
           <span><button class="btn">Show/Hide</button></span>
+        </p>
+        <p>
+          <i
+            >If you scroll down some more, and click the button again, you'll
+            notice that the element remains in the same position within the
+            viewport, no matter where you scroll...</i
+          >
         </p>
         <div id="fixed-div" class="fixed">
           This div element has position: fixed;
