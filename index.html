@@ -62,9 +62,25 @@
       }
 
       /* position: static example */
-      div.static {
+      .static {
         position: static;
         border: 3px solid #73ad21;
+      }
+
+      #static-divs > .static {
+        margin-bottom: 10px;
+      }
+      #static-divs > .static:nth-child(2) {
+        border-color: red;
+      }
+      #static-divs > .static:nth-child(3) {
+        border-color: orange;
+      }
+      #static-divs > .static:nth-child(4) {
+        border-color: green;
+      }
+      #static-divs > .static:nth-child(5) {
+        border-color: blue;
       }
     </style>
   </head>
@@ -95,7 +111,49 @@
             <code class="code">
                 div.static {
                     position: static;
-                    border: 3px solid #73AD21;
+                    border: 3px solid #73AD21; // that's some kind of green
+                  }
+            </code>
+          </pre>
+      </details>
+      <div id="static-divs" class="example-content">
+        <p>Here are some more examples</p>
+        <div class="static">position: static;</div>
+        <div class="static">position: static;</div>
+        <div class="static">position: static;</div>
+        <div class="static">position: static;</div>
+      </div>
+      <details>
+        <summary markdown="span">HTML</summary>
+        <pre>
+            <code class="code">
+                &lt;div class="static">position: static;&lt;/div&gt;
+            </code>
+          </pre>
+      </details>
+      <details>
+        <summary markdown="span">CSS</summary>
+        <pre>
+            <code class="code">
+                .static {
+                    position: static;
+                    border: 3px solid #73ad21;
+                  }
+            
+                  #static-divs > .static {
+                    margin-bottom: 10px;
+                  }
+                  #static-divs > .static:nth-child(2) {
+                    border-color: red;
+                  }
+                  #static-divs > .static:nth-child(3) {
+                    border-color: orange;
+                  }
+                  #static-divs > .static:nth-child(4) {
+                    border-color: green;
+                  }
+                  #static-divs > .static:nth-child(5) {
+                    border-color: blue;
                   }
             </code>
           </pre>
