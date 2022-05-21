@@ -80,6 +80,8 @@
         border: 1px solid #838060;
         border-radius: 8px;
         margin-bottom: 10px;
+        max-height: 100vh;
+        overflow: hidden;
         padding: 1em;
       }
 
@@ -148,6 +150,31 @@
         height: 100px;
         border: 3px solid #73ad21;
       }
+
+      .overflow-container {
+        height: 100px;
+        overflow: auto;
+        background: rgb(131, 58, 180);
+        background: linear-gradient(
+          90deg,
+          rgba(131, 58, 180, 1) 0%,
+          rgba(253, 29, 29, 1) 50%,
+          rgba(252, 176, 69, 1) 100%
+        );
+      }
+
+      .overflow-div {
+        height: 1000px;
+      }
+
+      .sticky-div {
+        margin-top: 50px;
+        position: sticky;
+        top: 0;
+        border: 3px solid blue;
+        background: #73ad21;
+        color: white;
+      }
     </style>
   </head>
   <body>
@@ -213,6 +240,9 @@
         <summary markdown="span">HTML</summary>
         <pre>
             <code class="code">
+                &lt;div class="static">position: static;&lt;/div&gt;
+                &lt;div class="static">position: static;&lt;/div&gt;
+                &lt;div class="static">position: static;&lt;/div&gt;
                 &lt;div class="static">position: static;&lt;/div&gt;
             </code>
           </pre>
@@ -320,8 +350,8 @@
         <pre>
                 <code class="code">
                     .fixed {
-                        background: var(--accent-color-rust);
-                        border: 3px solid var(--border-color);
+                        background: #7e4a35;
+                        border: 3px solid #cab577;
                         bottom: 0;
                         color: white;
                         padding: 15px;
@@ -330,26 +360,6 @@
                         visibility: hidden;
                         width: 300px;
                       }
-
-                      .hide {
-                        visibility: unset;
-                      }
-                </code>
-              </pre>
-      </details>
-      <details>
-        <summary markdown="span">
-          JavaScript <i>for the click handler</i> 😄
-        </summary>
-        <pre>
-                <code class="code">
-                    const clickHandler = () => {
-                        const element = document.getElementById("fixed-div");
-                        element.classList.toggle("hide");
-                      };
-
-                      const btn = document.querySelector(".btn");
-                      btn.addEventListener("click", clickHandler);
                 </code>
               </pre>
       </details>
@@ -377,9 +387,9 @@
         <summary markdown="span">HTML</summary>
         <pre>
                 <code class="code">
-                    &lt;div class="relative-div"&gt;
+                    &lt;div class="relative"&gt;
                         This div element has position: relative;
-                        &lt;div class="absolute-div"&gt;
+                        &lt;div class="absolute"&gt;
                           This div element has position: absolute;
                         &lt;/div&gt;
                       &lt;/div&gt;
@@ -390,7 +400,7 @@
         <summary markdown="span">CSS</summary>
         <pre>
                 <code class="code">
-                    .relative-div {
+                    .relative {
                         margin: auto;
                         position: relative;
                         width: 400px;
@@ -398,13 +408,83 @@
                         border: 3px solid #73ad21;
                       }
                 
-                      .absolute-div {
+                      .absolute {
                         position: absolute;
                         top: 80px;
                         right: 0;
                         width: 200px;
                         height: 100px;
                         border: 3px solid #73ad21;
+                      }
+                </code>
+              </pre>
+      </details>
+    </div>
+
+    <h2>position: sticky;</h2>
+    <div class="content-card">
+      <div class="example-content">
+        <p>
+          The element is positioned according to the normal flow of the
+          document, and then offset relative to its nearest scrolling ancestor
+          and containing block (nearest block-level ancestor), including
+          table-related elements, based on the values of top, right, bottom, and
+          left. The offset does not affect the position of any other elements.
+          This value always creates a new stacking context. Note that a sticky
+          element "sticks" to its nearest ancestor that has a "scrolling
+          mechanism" (created when overflow is hidden, scroll, auto, or
+          overlay), even if that ancestor isn't the nearest actually scrolling
+          ancestor.
+        </p>
+        <div class="overflow-container">
+          <div class="overflow-div">
+            <div class="sticky-div">
+              This div element has position: sticky; scroll down...
+            </div>
+          </div>
+        </div>
+      </div>
+      <details>
+        <summary markdown="span">HTML</summary>
+        <pre>
+                <code class="code">
+                    &ltdiv class="overflow-container"&gt
+                        &ltdiv class="overflow-div"&gt
+                          &ltdiv class="sticky-div"&gt
+                            This div element has position: sticky; scroll down...
+                          &lt/div&gt
+                        &lt/div&gt
+                      &lt/div&gt
+                </code>
+              </pre>
+      </details>
+      <details>
+        <summary markdown="span">CSS</summary>
+        <pre>
+                <code class="code">
+                    .overflow-container {
+                        height: 100px;
+                        overflow: auto;
+                        background: rgb(131, 58, 180);
+                        background: linear-gradient(
+                          90deg,
+                          rgba(131, 58, 180, 1) 0%,
+                          rgba(253, 29, 29, 1) 50%,
+                          rgba(252, 176, 69, 1) 100%
+                        );
+                      }
+                
+                      .overflow-div {
+                        height: 1000px;
+                      }
+                
+                      .sticky-div {
+                        margin-top: 50px;
+                        position: sticky;
+                        top: 0;
+                        border: 3px solid blue;
+                        background: #73ad21;
+                        color: white;
                       }
                 </code>
               </pre>
