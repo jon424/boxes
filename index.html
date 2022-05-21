@@ -175,6 +175,42 @@
         background: #73ad21;
         color: white;
       }
+
+      .index {
+        background: #fff;
+        height: 40vh;
+        margin-bottom: 25px;
+        overflow: auto;
+        width: auto;
+      }
+
+      dl > div {
+        background: #fff;
+        padding: 24px 0 0 0;
+      }
+
+      dt {
+        background: #b8c1c8;
+        border-bottom: 1px solid #989ea4;
+        border-top: 1px solid #717d85;
+        color: #fff;
+        font: bold 18px/21px Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 2px 0 0 12px;
+        position: -webkit-sticky;
+        position: sticky;
+        top: -1px;
+      }
+
+      dd {
+        font: bold 20px/45px Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0 0 0 12px;
+        white-space: nowrap;
+      }
+      dd + dd {
+        border-top: 1px solid #ccc;
+      }
     </style>
   </head>
   <body>
@@ -491,6 +527,126 @@
       </details>
     </div>
 
+    <h2>position: sticky; is good for indexes</h2>
+    <div class="content-card">
+      <div class="index">
+        <dl>
+          <div>
+            <dt>A</dt>
+            <dd>Andrew W.K.</dd>
+            <dd>Apparat</dd>
+            <dd>Arcade Fire</dd>
+            <dd>At The Drive-In</dd>
+            <dd>Aziz Ansari</dd>
+          </div>
+          <div>
+            <dt>C</dt>
+            <dd>Chromeo</dd>
+            <dd>Common</dd>
+            <dd>Converge</dd>
+            <dd>Crystal Castles</dd>
+            <dd>Cursive</dd>
+          </div>
+          <div>
+            <dt>E</dt>
+            <dd>Explosions In The Sky</dd>
+          </div>
+          <div>
+            <dt>T</dt>
+            <dd>Ted Leo &amp; The Pharmacists</dd>
+            <dd>T-Pain</dd>
+            <dd>Thrice</dd>
+            <dd>TV On The Radio</dd>
+            <dd>Two Gallants</dd>
+          </div>
+        </dl>
+      </div>
+
+      <details>
+        <summary markdown="span">HTML</summary>
+        <pre>
+                <code class="code">
+                    &ltdiv class="index"&gt
+                        &ltdl&gt
+                          &ltdiv&gt
+                            &ltdt&gtA&lt/dt&gt
+                            &ltdd&gtAndrew W.K.&lt/dd&gt
+                            &ltdd&gtApparat&lt/dd&gt
+                            &ltdd&gtArcade Fire&lt/dd&gt
+                            &ltdd&gtAt The Drive-In&lt/dd&gt
+                            &ltdd&gtAziz Ansari&lt/dd&gt
+                          &lt/div&gt
+                          &ltdiv&gt
+                            &ltdt&gtC&lt/dt&gt
+                            &ltdd&gtChromeo&lt/dd&gt
+                            &ltdd&gtCommon&lt/dd&gt
+                            &ltdd&gtConverge&lt/dd&gt
+                            &ltdd&gtCrystal Castles&lt/dd&gt
+                            &ltdd&gtCursive&lt/dd&gt
+                          &lt/div&gt
+                          &ltdiv&gt
+                            &ltdt&gtE&lt/dt&gt
+                            &ltdd&gtExplosions In The Sky&lt/dd&gt
+                          &lt/div&gt
+                          &ltdiv&gt
+                            &ltdt&gtT&lt/dt&gt
+                            &ltdd&gtTed Leo &amp; The Pharmacists&lt/dd&gt
+                            &ltdd&gtT-Pain&lt/dd&gt
+                            &ltdd&gtThrice&lt/dd&gt
+                            &ltdd&gtTV On The Radio&lt/dd&gt
+                            &ltdd&gtTwo Gallants&lt/dd&gt
+                          &lt/div&gt
+                        &lt/dl&gt
+                      &lt/div&gt
+                </code>
+              </pre>
+      </details>
+
+      <details>
+        <summary markdown="span">CSS</summary>
+        <pre>
+                <code class="code">
+      .index {
+        background: #fff;
+        height: 40vh;
+        margin-bottom: 25px;
+        overflow: auto;
+        width: auto;
+      }
+
+      dl > div {
+        background: #fff;
+        padding: 24px 0 0 0;
+      }
+
+      dt {
+        background: #b8c1c8;
+        border-bottom: 1px solid #989ea4;
+        border-top: 1px solid #717d85;
+        color: #fff;
+        font: bold 18px/21px Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 2px 0 0 12px;
+        position: -webkit-sticky;
+        position: sticky;
+        top: -1px;
+      }
+
+      dd {
+        font: bold 20px/45px Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0 0 0 12px;
+        white-space: nowrap;
+      }
+      
+      dd + dd {
+        border-top: 1px solid #ccc;
+      }
+
+                </code>
+              </pre>
+      </details>
+    </div>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css"
